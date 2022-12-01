@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- Date 객체의 메소드 활용하기1 -->
+<html>
+<head>
+</head>
+<body>
+    <p id="date1"></p>
+    <p id="date2"></p>
+    <p id="date3"></p>
+    <p id="date4"></p>
+
+    <script>
+        var today=new Date(); //계속 쓰기위해 today에 저장
+
+        //메소드 활용해주는 부분
+        document.getElementById("date1").innerHTML=today.getFullYear()+"년";//getFullYear() → 연도 반환
+        document.getElementById("date2").innerHTML=today.getMonth()+1+"월"+today.getDate()+"일"; 
+        //getMonth()+1인 이유? month는 0부터 시작하기 때문에 +1 해줘야 한다
+        document.getElementById("date3").innerHTML=today.getHours()+"시"+today.getMinutes()+"분"+today.getSeconds()+"초";
+        //getHours() → 0~23시간 반환
+        //getMinutes() → 0~59분 반환
+        //getSeconds() → 0~59초 반환
+        document.getElementById("date4").innerHTML="2022년 12월 01일 이후 현재까지 몇 초가 지났어요?</p>"+today.getTime()+"ms가 지났습니다.";
+        /*getTime() → 메서드는 표준시에 따라 지정된 날짜의 시간에 해당하는 숫자 값을 반환합니다.
+        */
+    </script>
+</body>
+</html>
+<!-- Date 객체 활용하기 
+자바스크립트에서 많이 쓰이는 내장객체로 
+날짜의 시간 정보를 출력한다. 
+-->
