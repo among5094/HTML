@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- 자동차 속도 조절하기 과제2 -->
+<html>
+<head>
+</head>
+<body>
+    <p id="upspeed"></p>
+    <p id="downspeed"></p>
+
+    <script>
+        var car={
+            name: 'Sonata',
+            speed: 50,
+            color: 'White',
+            speedup: function(a)
+            {
+                var sp=this.speed+a;
+                if(sp>=300)
+                {
+                    sp=50;
+                    return sp;
+                }
+                else
+                    return sp;
+
+            },
+            speeddown: function(a)
+            {
+                var sp=this.speed-a;
+
+                if(sp<0)
+                {
+                    sp=0;
+                    return sp;
+                }
+                else
+                    return sp;
+            }
+        };
+
+        var upspeed=document.getElementById("upspeed");//웹문서 내에 upspeed를 가진 아이디를 찾아서 변수upspeed에 넣기
+        upspeed.textContent='속도 증가: '+car.speedup(100);//upspeed내용 출력
+        var downspeed=document.getElementById("downspeed");////웹문서 내에 downspeed를 가진 아이디를 찾아서 변수downspeed에 넣기
+        downspeed.textContent='속도 감소: '+car.speeddown(30);//downspeed내용 출력
+        
+    </script>
+</body>
+</html>

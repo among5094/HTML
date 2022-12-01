@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--기본 함수, 무명 함수 호출 우선순위-->
+<html>
+<head>
+</head>
+<body>
+    <script>
+
+        //무명 함수 선언(변수에 대입하는 거)
+        var printMsg = function(msg)
+        {
+            document.write("무명 함수: "+ msg + "<br>");
+        }
+
+        //기본 함수 선언
+        function printMsg(msg)
+        {
+            document.write("기본 함수: "+ msg + "<br>");
+        }
+       printMsg("호출되었습니다.");
+        
+    </script>
+</body>
+</html>

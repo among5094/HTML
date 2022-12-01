@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html> <!-- 언어코드, 국가코드 -->
+<head>
+    <title>10-1. 기본 함수 호출</title>
+</head>
+<body>
+    <script>
+        var text1="함수 선언 전 호출";
+        var text2="함수 선언 후 호출";
+
+        printMsg(text1); //함수 선언 전 호출
+        function printMsg(Msg)//함수 선언
+        {
+            document.write("함수 호출 메세지: "+ Msg + "<br>");
+        }
+        printMsg(text2); //함수 선언 후 호출
+    </script>
+</body>
+</html>

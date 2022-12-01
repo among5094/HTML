@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- Date 객체 활용하기 -->
+<html>
+<head>
+</head>
+<body>
+    <p id="date1"></p>
+    <p id="date2"></p>
+    <p id="date3"></p>
+    <p id="date4"></p>
+
+    <script>
+
+        //기본생성자
+        document.getElementById("date1").innerHTML=new Date();
+
+        //2022.12.01 이후의 밀리초 계산
+        document.getElementById("date2").innerHTML=new Date(2003,3,2);
+
+        //문자열 날짜
+        document.getElementById("date3").innerHTML=new Date("December 25, 2022 12:25:00");
+
+        //날짜 지정
+        document.getElementById("date4").innerHTML=new Date(2022,11,25,18,30,29);
+        //주의! 월(month)는 0부터 시작
+        
+    </script>
+</body>
+</html>
+<!-- Date 객체 활용하기 
+자바스크립트에서 많이 쓰이는 내장객체로 
+날짜의 시간 정보를 출력한다. 
+-->
