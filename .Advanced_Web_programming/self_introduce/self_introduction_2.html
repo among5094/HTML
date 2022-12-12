@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2번째 도전 </title>
+    <meta name="Viewport" content="user-scalable=no, initial-scale=1">
+	<style>
+
+        * {background-color: pink;} /*배경색 설정*/
+
+        ul {
+            overflow: hidden;
+            background-color: pink;
+        }
+
+        li {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            font-size: xx-large;
+            font-weight: 600;
+            
+        }
+
+        li a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover { /*호버란? 사용자의 마우스가 li의 a위에 올라가있을때의 반응을 설정해주는 부분이다. */
+            background-color: rgb(248, 157, 172);
+        }
+
+        .main_img {
+
+            text-align: center; /*글자 정렬*/
+            width: 500px; 
+            height: 500px;
+            border-radius: 30px; /*테두리를 원으로 얼만큼 설정할*/
+            position: relative; /* 이미지 포지션을 상대적으로 설정 */
+            top: 60px;
+
+        }
+
+	</style>
+</head>
+<body>
+    <div style="text-align: center">
+        <ul>
+            <li><a href="menu_1.html" target="_blank">My Art by Arduino</a></li>
+            <li><a href="menu_2.html" target="_blank">My My Favaurite</a></li>
+            <li><a href="menu_3.html" target="_blank">My vision</a></li>
+            <li><a href="menu_4.html" target="_blank">My contact</a></li>
+        </ul>
+    </div>
+
+    <div style="text-align: center">
+        <img class="main_img" src="skyimg.webp">
+    </div>
+
+    <!--뒤로가기 버튼 있는 부분-->
+    <a href="self_introduction_2.html"> <p class="back_emoji"> &#9194;</p> </a>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2022년 10월 17 7주차수업6 - 반응형으로 수정하기_과제</title>
+	<meta name="Viewport" content="user-scalable=no, initial-scale=1">
+	<style>
+
+		/*반응형 웹을 위한 코드 부분 */
+
+		/*세로 화면일때*/
+		@media screen and (orientation: portrait){ 
+			 body {
+				background-color: pink;
+				color:  purple;
+			} 
+		}
+
+		/*가로 화면일때*/
+		@media screen and (orientation: landscape){
+			body {
+				background-color: skyblue;
+				color: #03091a;}
+		}
+
+
+		/*자기소개를 위한 css부분 */
+		/* 
+		body {background-color: pink; } 
+		상위에 있어서 그런지 이거 있으니깐 반응형 웹 부분 만들때 이게 적용됨 그래서 제외시켰음*/
+
+		#id1 { 
+			font-size: 25px;
+			font-style: bold;
+			color: red;
+			 }
+		/*legend { 속성들---- }도 가능*/
+
+		#menu {   }
+
+	</style>
+</head>
+<body>
+	<!-- 헤더 부분: 자기소개 부분-->
+	<header>
+		<center>
+			<h1>&#127804;자기소개&#127804;</h1>
+		</center>
+		<hr align="center" width=90%></hr>
+	</header>
+
+	<section>
+		<article>
+
+	<!-- 메뉴 만드는 부분 -->
+
+	<div id="menu">
+		<ul>
+			<li> <a href="https://wiggle-wiggle.com/" target="_blank"> 선택지1: 자기소개1 보기</a> </li>
+			<li> <a href="Lorem ipsum.html/" target="_blank">선택지2: 로렘잇섬 보기</a> </li>
+			<li> (공백) </li>
+		</ul>
+	</div>
+	<hr align="center" width=90%></hr>
+
+	<!--11월28일 월요일 - 12주차 Date객체 배운거 활용 -->
+	<p>&#8986;디지털 시계 보기&#8986;</p>
+	<div id="digClock"></div>
+	<script>
+		function digClock()
+		{
+			var today = new Date(); //객체 1개
+			var day = today.getMonth()+ 1 + "월"+today.getDate() + "일";
+			var time = today.getHours() + "시"+today.getMinutes() + "분";
+			document.getElementById("digClock").innerHTML=day+time;
+			setTimeout('digClock()', 2000);
+			//setTimeout(): 일정 시간 기다린 후 실행해야하는 경우에 쓴다.
+			//첫번째 인자로 실행할 코드를 담고 있는 함수를 받고,  두번째 인자로 지연 시간을 밀리초(ms) 단위로 받는다. 1000초 == 1초
+		}
+		digClock();//함수 호출
+	</script>
+	<hr align="center" width=90%></hr>
+
+
+	<!-- 4주차때 배운 내용 -->
+
+	<form action="page.jsp" method="post">
+		<p>아이디(학번): <input type="text" name="class number">
+						<input type="submit" value="중복검사"> </p>
+		<!-- p뒤에 쓰니깐 자동으로 줄바꿈처리됨 그래서 p안에 써줌 -->			
+		<p>비밀번호  <input type="password" name="psw" placeholder="비밀번호" required></p>
+		<p></p>
+		<input type="submit" value="입력완료">
+		<input type="reset" value="다시작성할래요">
+		<!-- method="post" 인 이유는 get은 보안에 취약하고 post방식은 가려져서 보내지기 때문. 비밀번호 등 중요한 내용을 입력할때는 post방식을 써야한다.-->
+	</form>
+	<p></p>
+	<form action="page.jsp" method="get">
+		<fieldset> <legend id="id1">1년의 각오를 입력하세요</legend>
+			<textarea rows="5" cols="50"> 
+
+			</textarea>
+			<p></p>
+			<input type="submit" value="입력완료">
+			<input type="reset" value="다시작성할래요">
+		</fieldset>
+		<!-- <legend>태그는 fieldset요소의 캡션을 정의해줄때 사용한다. -->
+	</form>
+
+	<h3>성별을 입력하시오</h3>
+	<form action="page.jsp" method="get">
+		<input type="radio" name="sex" value="female" checked>여자
+		<input type="radio" name="sex" value="male">남자
+	</form>
+
+	<h3>취미를 선택하시오</h3>
+	<form action="page.jsp" method="get">
+		<input type="checkbox" name="" value="" checked>독서
+		<input type="checkbox" name="" value="">쇼핑
+		<input type="checkbox" name="" value="">음악감상
+		<input type="checkbox" name="" value="">게임
+		<input type="checkbox" name="" value="">운동
+		<input type="checkbox" name="" value="">인터넷
+		<input type="checkbox" name="" value="">코딩
+	</form>
+
+	<!-- 5주차때 배운 내용-->
+	<h3>좋아하는 과목 선택하기(중복선택 가능)</h3>
+	<form action="page.jsp" method="get">
+		<select name="subject" size="2" multiple>
+			<option value="고급C프로그래밍" selected>고급C프로그래밍</option>
+			<option value="고급웹프로그래밍">고급웹프로그래밍</option>
+			<option value="글쓰기와 읽기">글쓰기와 읽기</option>
+			<option value="창의공학설계">창의공학설계</option>
+		</select>
+	</form>
+
+	<h3>MBTI를 선택하세요.</h3>
+	<form action="page.jsp" method="get">
+		<label>MBTI를 선택하세요.
+			<select name="MBTI">
+				<optgroup label="EN">
+					<option>ENTJ</option>
+					<option>ENFP</option>
+					<option>ENTP</option>
+					<option>ENFJ</option>
+				</optgroup>
+
+				<optgroup label="IS">
+					<option>ISTJ</option>
+					<option>ISFJ</option>
+					<option>ISFP</option>
+					<option>ISTP</option>
+				</optgroup>
+
+				<optgroup label="IN">
+					<option>INFJ</option>
+					<option>INTJ</option>
+					<option>INFP</option>
+					<option>INTP</option>
+				</optgroup>
+
+				<optgroup label="ES">
+					<option>ESTP</option>
+					<option>ESFP</option>
+					<option>ESTJ</option>
+					<option>ESFJ</option>
+				</optgroup>
+			</select>
+			
+		</label>
+	</form>
+
+	<h3>좋아하는 애니메이션 입력하기</h3>
+	<form action="page.jsp" method="get">
+		<label>좋아하는 애니메이션을 입력하세요(자동완성 기능 제공)
+			<input type="text" list="favorite animation" name="animation">
+			<datalist id="favorite animation">
+				<option value="귀멸의 칼날">귀멸의 칼날</option>
+				<option value="도쿄 리벤저스">도쿄 리벤저스</option>
+				<option value="스파이 패밀리">스파이 패밀리</option>
+				<option value="진격의 거인">진격의 거인</option>
+			</datalist>
+		</label>
+	</form>
+
+	<h3>시험기간 입력하기</h3>
+	<form action="page.jsp" method="get">
+		시작일: <input type="date" name="start day" min="2022-10-20" max="2022-10-26">
+		마지막일: <input type="date" name="last day" min="2022-10-20" max="2022-10-26">
+	</form>
+
+	<h3>생일(년도,월,일,시간) 입력하기</h3>
+		생일: <input type="datetime-local" name="birth">
+
+	<h3>좋아하는 색상 선택하기</h3>
+	<input type="color" name="favorite color" value="#FFFF00">
+	<!-- HTML컬러표 선택하는 곳: https://html-color-codes.info/Korean/ -->
+	<input type="submit" value="선택완료">
+
+	<h3>나이를 입력하세요</h3>
+	<input type="number" name="age" max="120" min="1">
+	<input type="submit" value="입력완료">
+
+	<h3>좋아하는 숫자를 입력하세요</h3>
+	<input type="range" name="favorite number" max="100" min="1">
+	<input type="submit" value="입력완료">
+
+	<h3>이메일을 입력하세요</h3>
+	<input type="email" name="email">
+	<input type="submit" value="입력완료">
+
+	<h3>블로그 주소를 입력하세요</h3>
+	<input type="url" name="myurl">
+	<input type="submit" value="입력완료">
+
+
+<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+		</article>
+	</section>
+</body>
+</html>
+
+<!-- body { 
+			background-image: url("https://i.pinimg.com/originals/08/2c/f5/082cf5bb28cdd5e93cc820c652698c13.jpg");
+			background-repeat: repeat; } -->
+
+
+			<!--
+제출,다시작성
+<input type="submit" value="제출">
+<input type="reset" value="다시작성">
