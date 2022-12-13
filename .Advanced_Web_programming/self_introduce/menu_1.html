@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Art by Arduino</title>
+	<title> My Art by Arduino </title>
 	<style>
 
         * {background-color: pink; }
@@ -9,15 +9,16 @@
         h3{
             font-size: 70px;
             color: rgb(163, 118, 206);
-            text-shadow: 2px 0px 10px gray;
+            text-shadow: 2px 0px 10px gray; /*글자 그림자를 설정해주는 부분 */
+            /* 수평 그림자, 수직 그림자, 번짐의 정도, 그림자 색깔*/
         }
 
         p{
-            font-size: 27px;
-            color: blueviolet;
-            
+            font-size: 25px;
+            color: blueviolet;        
         }
 
+        /* pad는 padding라는 의미 -> padding을 입력해야하는 요소에는 이 id태그를 쓴다. */
         #pad{
             padding-left: 20px;
             padding-right: 20px;
@@ -28,19 +29,27 @@
             margin-bottom: 3px;
         }
 
+        /* 뒤로가기 이모지에 대한 설정 */
+        .back_emoji {
+				font-size: 30px;
+				text-align:center;
+		}
+
 	</style>
 </head>
 <body>
-    <img>
     <h3>소리감지 무드등</h3>
-    <p>작품 소개: 소리를 입력받으면 반딧불이 모양을 한 led가 켜지는 작품입니다.</p>
-    
+    <p>작품 소개: 소리를 입력받으면 반딧불이 모양을 한 led가 켜지는 작품입니다.<br>
+        뒤로가기 버튼은 가장 밑에 있습니다.</p>
+
     <img id="pad" src="창공작품사진1.jpg" width="400" height="500">
     <img id="pad" src="창공작품사진2.jpg" width="640" height="500">
     <video id="pad" src="창공작품동영상.mp4" controls autoplay></video>
 
     <!--뒤로가기 버튼 있는 부분-->
     <a href="self_introduction_2.html"> <p class="back_emoji"> &#9194;</p> </a>
+
+    <p></p><p></p><p></p><p></p><p></p>
 
 </body>
 </html>

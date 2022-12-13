@@ -4,10 +4,54 @@
 	<title></title>
 	<style>
 
-		* {background-color: rgb(219, 141, 161); }
+		* {
+			background-color: rgb(219, 141, 161);
+			/* text-align: center; */
+		
+		}
+
+		h3 {
+			color: black;
+			font-size: 40px;
+			font-weight: 30px;
+			text-align: center;
+			
+		}
+
+		/* 뒤로가기 이모지에 대한 설정 */
+		.back_emoji {
+				font-size: 30px;
+				text-align:center;
+		}
 		
 	</style>
 </head>
 <body>
+
+	<!-- 소개문 있는 부분 -->
+	<h3>I want you to know<br>
+		If you're like that,<br>
+		Let me know you<br> </h3>
+	
+	<!--자기소개문 입력받는 부분 -->
+
+	<form action="page.jsp" method="post">
+	<!-- method="post" 인 이유는 get은 보안에 취약하고 post방식은 가려져서 보내지기 때문. 비밀번호 등 중요한 내용을 입력할때는 post방식을 써야한다.-->
+		<p>학번 <input type="text" name="class number">
+						<input type="submit" value="중복검사"> </p>
+				
+		<p>비밀번호 <input type="password" name="psw" placeholder="비밀번호" required></p><br>
+		<!-- placeholder란? 입력 필드에 사용자가 적절한 값을 입력할 수 있도록 도와주는 짧은 도움말을 명시
+		참고: http://www.tcpschool.com/html-tag-attrs/input-placeholder -->
+
+		<!--제출하는 부분 페이지-->
+		<input type="submit" value="입력완료">
+		<input type="reset" value="다시작성할래요">
+		
+	</form>
+
+	<!--뒤로가기 버튼 있는 이미지-->
+	<a href="self_introduction_2.html"> <p class="back_emoji"> &#9194;</p> </a>
+
 </body>
 </html>

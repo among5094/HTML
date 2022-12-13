@@ -1,66 +1,137 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>2번째 도전 </title>
+	<title>&#127752;혜멍이의 자기소개&#127752;</title> <!--&#127752; -> 무지개 이모티콘-->
+
+    <!--반응형 웹을 위한 코드 -->
     <meta name="Viewport" content="user-scalable=no, initial-scale=1">
+
 	<style>
 
-        * {background-color: pink;} /*배경색 설정*/
+        * {background-color: pink;} /* *는 전체 선택자, 배경색 설정 */
 
+        /* ul태그를 위한 설정 */
         ul {
-            overflow: hidden;
-            background-color: pink;
+            overflow: hidden; /*요소의 컨텐츠가 넘치면 내용물을 자르라는 의미*/
+            background-color: pink; /* 배경 색상은 핑크색으로 */
         }
 
+        /* li태그 위한 설정 */
         li {
             display: inline-block;
-            color: white;
-            text-align: center;
-            font-size: xx-large;
-            font-weight: 600;
+            /* display ->속성 요소를 어떻게 표시할지 선택함
+            inline-block -> 해당 요소 자체는 인라인(inline) 요소처럼 동작,하지만 해당 요소 내부에서는 블록(block) 요소처럼 동작
+            블록 요소는 인라인 요소와 비슷하지만, 너비와 높이를 설정할 수 있고
+            블록 요소처럼 margin을 이용하여 여백을 지정할 수도 있다.
+            참고: http://www.tcpschool.com/css/css_position_display  */
+
+            color: white; /*색상은 흰색*/
+            text-align: center; /*글자 정렬: 가운데 */
+            font-size: xx-large; /*글자의 "크기"설정 */
+            font-weight: 600; /*글자의 "두께" 설정 */
             
         }
 
         li a {
             display: inline-block;
-            color: white;
-            text-align: center;
+            /* display ->속성 요소를 어떻게 표시할지 선택함
+            inline-block -> 해당 요소 자체는 인라인(inline) 요소처럼 동작,하지만 해당 요소 내부에서는 블록(block) 요소처럼 동작
+            블록 요소는 인라인 요소와 비슷하지만, 너비와 높이를 설정할 수 있고
+            블록 요소처럼 margin을 이용하여 여백을 지정할 수도 있다.
+            참고: http://www.tcpschool.com/css/css_position_display  */
+
+            color: white;/*색상은 흰색*/
+            text-align: center; /*글자 정렬: 가운데 */
             padding: 14px 16px;
+            /* padding -> 테두리(border)와 내용물(content)사이의 간격을 지정
+            padding: 세로방향 가로방향 지정한다는 의미*/
             text-decoration: none;
+            /* text-decoration -> css에 넣는 것, 밑줄,윗줄,중간줄 넣을 때 사용함
+            text-decoration: none -> 기본값으로 밑줄이 없는 보통 글자
+            한 번 클릭하면 밑줄 생기길래 이거 이용해서 밑줄 없애주는 역할 */
         }
 
-        li a:hover { /*호버란? 사용자의 마우스가 li의 a위에 올라가있을때의 반응을 설정해주는 부분이다. */
-            background-color: rgb(248, 157, 172);
+        /* li의 a를 지정하는 태크 
+        호버란? 사용자의 마우스가 li의 a위에 올라가있을때의 반응을 설정해주는 부분이다. */
+        li a:hover { 
+            background-color: rgb(248, 157, 172); /*배경색깔 설정(빨강, 초록, 파랑) 설정*/
         }
 
+        /*메인 이미지를 위한 태그, 이름 그대로 main_image이다. */
         .main_img {
-
-            text-align: center; /*글자 정렬*/
-            width: 500px; 
-            height: 500px;
+            text-align: center; /*글자정렬: 가운데 정렬*/
+            width: 500px;  /*가로 설정*/
+            height: 500px; /*세로 설정*/
             border-radius: 30px; /*테두리를 원으로 얼만큼 설정할*/
-            position: relative; /* 이미지 포지션을 상대적으로 설정 */
-            top: 60px;
 
+            /* position: 문서에 요소를 배치하는 방법*/
+            position: relative; /* 요소 자기 자신을 기준으로 배치 */
+            top: 60px; /* 위를 기준으로 설정 */
+
+        }
+
+        /* 디지털 시계의 글자 색상과 가운데 정렬을 위해 만든 class태그 */
+        .clock_font {
+            color:beige; /* 색상 설정: 베이지 색깔로 */
+            text-align: center; /* 글자 정렬: 가운데 정렬 */
+        }
+
+        /*padding을 쓰기 위해 만든 id태그 padding*/
+        #padding {
+            padding-top: 70px;
         }
 
 	</style>
 </head>
 <body>
-    <div style="text-align: center">
+    <div style="text-align: center"> <!-- -->
         <ul>
-            <li><a href="menu_1.html" target="_blank">My Art by Arduino</a></li>
-            <li><a href="menu_2.html" target="_blank">My My Favaurite</a></li>
-            <li><a href="menu_3.html" target="_blank">My vision</a></li>
-            <li><a href="menu_4.html" target="_blank">My contact</a></li>
+            <li><a href="menu_1.html" > My Art by Arduino</a> </li>
+            <li><a href="menu_2.html" > My Favaurite</a> </li>
+            <li><a href="menu_3.html" > My contact</a> </li>
+            <li><a href="menu_4.html" > Input Information </a></li>
         </ul>
     </div>
 
+    <!-- 메인 이미지 있는 부분 -->
     <div style="text-align: center">
         <img class="main_img" src="skyimg.webp">
     </div>
 
-    <!--뒤로가기 버튼 있는 부분-->
-    <a href="self_introduction_2.html"> <p class="back_emoji"> &#9194;</p> </a>
+    <!--
+        복사 붙여넣기를 이용해서 이미지를 여러개 바꿔보세요!
+        감성 풍경 사진:  src="skyimg.webp"
+        감성 비오는 움짤:  src="갬성짤1.gif"
+    -->
+
+    <!-- 디지털 시계 넣은 부분 - 교수님이 수업시간에 디지털 시계 넣으라고 하셔서 기억해놓고 있었습니다! -->
+    <p id="padding"></p>
+	<p class="clock_font">지금 너와 있는 이 순간...&#127775; </p>
+    <div id="digClock" class="clock_font"> 현재시각...&#8986; </div>
+	<script>
+		function digClock()
+		{
+			var today = new Date(); //객체 1개
+			var day = today.getMonth()+ 1 + "월 " +today.getDate() + "일 ";
+			var time = today.getHours() + "시 "+today.getMinutes() + "분 "+ today.getSeconds()+"초";
+			document.getElementById("digClock").innerHTML=day+time;
+			setTimeout('digClock()', 2000);
+
+			//setTimeout(): 일정 시간 기다린 후 실행해야하는 경우에 쓴다.
+			//첫번째 인자로 실행할 코드를 담고 있는 함수를 받고,  두번째 인자로 지연 시간을 밀리초(ms) 단위로 받는다. 1000초 == 1초
+		}
+		digClock();//함수 호출
+	</script>
+
 </body>
 </html>
+
+<!--
+    emoji
+    마름모 모양 반짝이: &#10024;
+    별모양: &#11088;
+    초승달:  	127762
+    빛나는 별모양:  127775
+
+
+-->
