@@ -78,26 +78,28 @@
 
         /*padding을 쓰기 위해 만든 id태그 padding*/
         #padding {
-            padding-top: 70px;
+            padding-top: 70px; /*padding-top -> 테두리(border)와 내용물(content)의 윗부분 간격을 지정*/
         }
 
 	</style>
 </head>
 <body>
-    <div style="text-align: center"> <!-- -->
-        <ul>
-            <li><a href="menu_1.html" > My Art by Arduino</a> </li>
-            <li><a href="menu_2.html" > My Favaurite</a> </li>
-            <li><a href="menu_3.html" > My contact</a> </li>
-            <li><a href="menu_4.html" > Input Information </a></li>
+    <div style="text-align: center"> <!--style="text-align: center" -> 글자 정렬 가운데 정렬하라는 의미 -->
+        <ul> 
+            <li><a href="menu_1.html" > My Art by Arduino</a> </li> <!--아두이노 소개 페이지로 이동-->
+            <li><a href="menu_2.html" > My Favaurite</a> </li> <!--내가 좋아하는 것 소개 페이지로 이동-->
+            <li><a href="menu_3.html" > My Github</a> </li> <!-- 깃허브 소개 페이지로 이동-->
+            <li><a href="menu_4.html" > Input Information </a></li> <!-- 정보 입력 페이지로 이동-->
         </ul>
+            <!--ul: unordered list의 약자, 순서가 필요없는 목록을 만든다는 의미
+            li는 list item의 약자
+            a는 앵커태그 href는 목적지이다. 어느 곳으로 갈지 지정해주는 역할 참고로 a태그 닫아야함 -->
     </div>
 
     <!-- 메인 이미지 있는 부분 -->
-    <div style="text-align: center">
-        <img class="main_img" src="skyimg.webp">
+    <div style="text-align: center"> <!--style="text-align: center" -> 글자 정렬 가운데 정렬하라는 의미 -->
+        <img class="main_img" src="skyimg.webp"> <!--이미지에 class적용하고 src로 이미지 정렬-->
     </div>
-
     <!--
         복사 붙여넣기를 이용해서 이미지를 여러개 바꿔보세요!
         감성 풍경 사진:  src="skyimg.webp"
@@ -105,24 +107,29 @@
     -->
 
     <!-- 디지털 시계 넣은 부분 - 교수님이 수업시간에 디지털 시계 넣으라고 하셔서 기억해놓고 있었습니다! -->
-    <p id="padding"></p>
-	<p class="clock_font">지금 너와 있는 이 순간...&#127775; </p>
-    <div id="digClock" class="clock_font"> 현재시각...&#8986; </div>
+    <p id="padding"></p> <!--p에 패딩 아이디 태그 적용한 부분 -->
+	<p class="clock_font">지금 너와 있는 이 순간...&#127775; </p> <!-- p에 클래스 적용, &#127775; -> 별 모양 이모티콘 -->
+    <div id="digClock" class="clock_font"></div> <!--디지털 시계 id로 넣고 class로 시계 폰트 넣은 부분 -->
+    <!--스크립트 코드-->
 	<script>
-		function digClock()
+		function digClock() /*digClock() 함수 선언 */
 		{
 			var today = new Date(); //객체 1개
-			var day = today.getMonth()+ 1 + "월 " +today.getDate() + "일 ";
-			var time = today.getHours() + "시 "+today.getMinutes() + "분 "+ today.getSeconds()+"초";
+			var day = today.getMonth()+ 1 + "월 " +today.getDate() + "일 "; /*day에 월과 일 넣기*/
+            /*getMonth() -> 0~11월 반환, 0부터 반환하기 때문에 +1해주기, getDate() -> 1~31날짜 반환*/
+			var time = today.getHours() + "시 "+today.getMinutes() + "분 "+ today.getSeconds()+"초"; /* time에 시,분,초 넣기*/
+            /* getHours() -> 0~23시 반환, getMinutes() -> 0~59초 반환, getSeconds() -> 0~59초 반환 */
 			document.getElementById("digClock").innerHTML=day+time;
+            /* document.getElementById(id);에 해당 element의 id를 넣음으로 사용합니다 
+            id와 일치하면 Element 객체를 반환하고, 일치하는 요소가 없으면 null 반환. 
+            참고: https://kyounghwan01.github.io/blog/JS/JSbasic/getElementById/ */
 			setTimeout('digClock()', 2000);
-
 			//setTimeout(): 일정 시간 기다린 후 실행해야하는 경우에 쓴다.
 			//첫번째 인자로 실행할 코드를 담고 있는 함수를 받고,  두번째 인자로 지연 시간을 밀리초(ms) 단위로 받는다. 1000초 == 1초
+            //참고: https://www.daleseo.com/js-timer/
 		}
 		digClock();//함수 호출
 	</script>
-
 </body>
 </html>
 
@@ -132,6 +139,4 @@
     별모양: &#11088;
     초승달:  	127762
     빛나는 별모양:  127775
-
-
 -->
