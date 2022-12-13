@@ -1,57 +1,220 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Input Information</title> <!--4번째 페이지 정보 입력하는 부분-->
+
+	<meta name="Viewport" content="user-scalable=no, initial-scale=1">
+	<!--
+		meta태그: 추가적인 웹 페이지 정보를 제공
+		Viewport meta태그의 content속성에 입력할 수 있는 값
+		user-scalable=no: 확대 및 축소 기능 없음
+		initial-scale=1: 초기 확대 비율
+	-->
+
 	<style>
+		/*반응형 웹을 위한 코드 부분 */
+		/*세로 화면일때 */
+		@media screen and (orientation: portrait){ /*portrait -> 세로모드 */
+			 body { /* 세로 화면일 때 바디부분 설정*/
+				background-color: pink; /* 세로 화면일 때 배경 색상 핑크색으로 바꾸기*/
+				color:  purple; /* 세로 화면일 때 보라색으로 바꾸기*/
+			} 
+		}
+		/*
+		@media
+		미디어 쿼리는 CSS에서 어떤 스타일을 선택적으로 적용하고 싶을 때 사용한다.
+		*/
 
-		* {
-			background-color: rgb(219, 141, 161);
-			/* text-align: center; */
-		
+		/*가로 화면일때 */
+		@media screen and (orientation: landscape){ /* landscape -> 가로모드 */
+			body {
+				background-color: skyblue; /*가로 화면일 때 배경 색상 스카이블루 */
+				color: #03091a;} /*가로 화면일 때 글자 색상 남색 */
 		}
 
-		h3 {
-			color: black;
-			font-size: 40px;
-			font-weight: 30px;
-			text-align: center;
-			
-		}
+		/*1년의 각오를 입력하라는 말에 쓸 태그*/
+		#id1 { 
+			font-size: 25px; /*글자 크기 25px*/
+			font-style: bold; /*글자 스타일: 굵게*/
+			color: red; /*글자 색상: red*/
+			}
 
-		/* 뒤로가기 이모지에 대한 설정 */
-		.back_emoji {
-				font-size: 30px;
-				text-align:center;
-		}
-		
 	</style>
 </head>
 <body>
+	<!-- 헤더 부분: 자기소개 부분-->
+	<header>
+		<center>
+			<h1>&#127804;자기소개&#127804;</h1> <!--&#127804; 꽃 모양 이모티콘 -->
+		</center>
+		<hr align="center" width=90%> </hr>
+	</header>
 
-	<!-- 소개문 있는 부분 -->
-	<h3>I want you to know<br>
-		If you're like that,<br>
-		Let me know you<br> </h3>
-	
-	<!--자기소개문 입력받는 부분 -->
+	<section>
+		<article>
+	<!--11월28일 월요일 - 12주차 Date객체 배운거 활용 -->
+	<p>&#8986;디지털 시계 보기&#8986;</p>
+	<div id="digClock"></div>
+	<script>
+		function digClock()
+		{
+			var today = new Date(); //객체 1개
+			var day = today.getMonth()+ 1 + "월"+today.getDate() + "일";
+			var time = today.getHours() + "시"+today.getMinutes() + "분";
+			document.getElementById("digClock").innerHTML=day+time;
+			setTimeout('digClock()', 2000);
+			//setTimeout(): 일정 시간 기다린 후 실행해야하는 경우에 쓴다.
+			//첫번째 인자로 실행할 코드를 담고 있는 함수를 받고,  두번째 인자로 지연 시간을 밀리초(ms) 단위로 받는다. 1000초 == 1초
+		}
+		digClock();//함수 호출
+	</script>
+	<hr align="center" width=90%></hr>
 
+
+	<!-- 4주차때 배운 내용 -->
 	<form action="page.jsp" method="post">
-	<!-- method="post" 인 이유는 get은 보안에 취약하고 post방식은 가려져서 보내지기 때문. 비밀번호 등 중요한 내용을 입력할때는 post방식을 써야한다.-->
-		<p>학번 <input type="text" name="class number">
+		<p>아이디(학번): <input type="text" name="class number">
 						<input type="submit" value="중복검사"> </p>
-				
-		<p>비밀번호 <input type="password" name="psw" placeholder="비밀번호" required></p><br>
-		<!-- placeholder란? 입력 필드에 사용자가 적절한 값을 입력할 수 있도록 도와주는 짧은 도움말을 명시
-		참고: http://www.tcpschool.com/html-tag-attrs/input-placeholder -->
-
-		<!--제출하는 부분 페이지-->
+		<!-- p뒤에 쓰니깐 자동으로 줄바꿈처리됨 그래서 p안에 써줌 -->			
+		<p>비밀번호  <input type="password" name="psw" placeholder="비밀번호" required></p>
+		<p></p>
 		<input type="submit" value="입력완료">
 		<input type="reset" value="다시작성할래요">
-		
+		<!-- method="post" 인 이유는 get은 보안에 취약하고 post방식은 가려져서 보내지기 때문. 비밀번호 등 중요한 내용을 입력할때는 post방식을 써야한다.-->
+	</form>
+	<p></p>
+	<form action="page.jsp" method="get">
+		<fieldset> <legend id="id1">1년의 각오를 입력하세요</legend>
+			<textarea rows="5" cols="50"> 
+
+			</textarea>
+			<p></p>
+			<input type="submit" value="입력완료">
+			<input type="reset" value="다시작성할래요">
+		</fieldset>
+		<!-- <legend>태그는 fieldset요소의 캡션을 정의해줄때 사용한다. -->
 	</form>
 
-	<!--뒤로가기 버튼 있는 이미지-->
-	<a href="self_introduction_2.html"> <p class="back_emoji"> &#9194;</p> </a>
+	<h3>성별을 입력하시오</h3>
+	<form action="page.jsp" method="get">
+		<input type="radio" name="sex" value="female" checked>여자
+		<input type="radio" name="sex" value="male">남자
+	</form>
 
+	<h3>취미를 선택하시오</h3>
+	<form action="page.jsp" method="get">
+		<input type="checkbox" name="" value="" checked>독서
+		<input type="checkbox" name="" value="">쇼핑
+		<input type="checkbox" name="" value="">음악감상
+		<input type="checkbox" name="" value="">게임
+		<input type="checkbox" name="" value="">운동
+		<input type="checkbox" name="" value="">인터넷
+		<input type="checkbox" name="" value="">코딩
+	</form>
+
+	<!-- 5주차때 배운 내용-->
+	<h3>좋아하는 과목 선택하기(중복선택 가능)</h3>
+	<form action="page.jsp" method="get">
+		<select name="subject" size="2" multiple>
+			<option value="고급C프로그래밍" selected>고급C프로그래밍</option>
+			<option value="고급웹프로그래밍">고급웹프로그래밍</option>
+			<option value="글쓰기와 읽기">글쓰기와 읽기</option>
+			<option value="창의공학설계">창의공학설계</option>
+		</select>
+	</form>
+
+	<h3>MBTI를 선택하세요.</h3>
+	<form action="page.jsp" method="get">
+		<label>MBTI를 선택하세요.
+			<select name="MBTI">
+				<optgroup label="EN">
+					<option>ENTJ</option>
+					<option>ENFP</option>
+					<option>ENTP</option>
+					<option>ENFJ</option>
+				</optgroup>
+
+				<optgroup label="IS">
+					<option>ISTJ</option>
+					<option>ISFJ</option>
+					<option>ISFP</option>
+					<option>ISTP</option>
+				</optgroup>
+
+				<optgroup label="IN">
+					<option>INFJ</option>
+					<option>INTJ</option>
+					<option>INFP</option>
+					<option>INTP</option>
+				</optgroup>
+
+				<optgroup label="ES">
+					<option>ESTP</option>
+					<option>ESFP</option>
+					<option>ESTJ</option>
+					<option>ESFJ</option>
+				</optgroup>
+			</select>
+			
+		</label>
+	</form>
+
+	<h3>좋아하는 애니메이션 입력하기</h3>
+	<form action="page.jsp" method="get">
+		<label>좋아하는 애니메이션을 입력하세요(자동완성 기능 제공)
+			<input type="text" list="favorite animation" name="animation">
+			<datalist id="favorite animation">
+				<option value="귀멸의 칼날">귀멸의 칼날</option>
+				<option value="도쿄 리벤저스">도쿄 리벤저스</option>
+				<option value="스파이 패밀리">스파이 패밀리</option>
+				<option value="진격의 거인">진격의 거인</option>
+			</datalist>
+		</label>
+	</form>
+
+	<h3>시험기간 입력하기</h3>
+	<form action="page.jsp" method="get">
+		시작일: <input type="date" name="start day" min="2022-10-20" max="2022-10-26">
+		마지막일: <input type="date" name="last day" min="2022-10-20" max="2022-10-26">
+	</form>
+
+	<h3>생일(년도,월,일,시간) 입력하기</h3>
+		생일: <input type="datetime-local" name="birth">
+
+	<h3>좋아하는 색상 선택하기</h3>
+	<input type="color" name="favorite color" value="#FFFF00">
+	<!-- HTML컬러표 선택하는 곳: https://html-color-codes.info/Korean/ -->
+	<input type="submit" value="선택완료">
+
+	<h3>나이를 입력하세요</h3>
+	<input type="number" name="age" max="120" min="1">
+	<input type="submit" value="입력완료">
+
+	<h3>좋아하는 숫자를 입력하세요</h3>
+	<input type="range" name="favorite number" max="100" min="1">
+	<input type="submit" value="입력완료">
+
+	<h3>이메일을 입력하세요</h3>
+	<input type="email" name="email">
+	<input type="submit" value="입력완료">
+
+	<h3>블로그 주소를 입력하세요</h3>
+	<input type="url" name="myurl">
+	<input type="submit" value="입력완료">
+
+	<br><br><br><br><br><br><br><br>
+
+		</article>
+	</section>
 </body>
 </html>
+
+<!-- body { 
+			background-image: url("https://i.pinimg.com/originals/08/2c/f5/082cf5bb28cdd5e93cc820c652698c13.jpg");
+			background-repeat: repeat; } -->
+
+
+			<!--
+제출,다시작성
+<input type="submit" value="제출">
+<input type="reset" value="다시작성">
