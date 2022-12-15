@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ch10-4번: 기본함수와 무명함수의 우선순위</title>
+</head>
+<body>
+    <script>
+
+        //무명함수
+        var printMsg = function(msg)
+        {
+            document.write("무명함수:"+msg+"<br>");
+        }
+
+        //기본함수
+        function printMsg(msg)
+        {
+            document.write("기본함수:"+msg+"<br>");
+        }
+
+        //함수 호출
+        printMsg("호출되었습니다.");
+    </script>
+</body>
+</html>
