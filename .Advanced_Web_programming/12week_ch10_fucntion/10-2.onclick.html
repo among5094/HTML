@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head><!--onclick 속성값으로 함수 호출하기-->
+<head><!--onclick 속성값으로 함수 호출하기,버튼 누르면 메세지가 출력됨-->
 </head>
 <body>
     <script>
-        
-        function printMsg(name, age)//함수 선언
+
+        //함수 선언
+        function printMsg(name, age)
         {        
             document.write("학생 이름: "+ name + "</b><br>");
             document.write("학생 나이: "+ age + "</b><br>");
         }
         
     </script>
+    <!-- 버튼을 누르면 메세지 출력되는 프로그램 -->
     <button type="button" onclick="printMsg('노혜민', 22)"> 학생 정보</button>
 </body>
 </html>
