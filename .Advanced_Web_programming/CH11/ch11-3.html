@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ch11-3번: 자동차 객체 생성하기</title>
+</head>
+<body>
+
+    <p id="carname"></p>
+    <p id="carcolor"></p>
+    <p id="carspeed"></p>
+
+    <script>
+
+        var car = {
+
+            // 속성 정의
+            name: 'Sonata', 
+            speed: 50, 
+            color: 'White', 
+            
+            //메소드 정의
+            start: function()
+            { 
+                return this.speed+10;
+                //this키워드: 객체 자체를 의미함
+                //즉 this.speed()는 car객체의 속성인 speed를 의미한다.
+            }
+        };
+
+        //제어할 요소를 찾아 결과를 출력하는 방법2 - p.407
+
+        var cname=document.getElementById("carname"); //아이디가 carname인 요소를 찾아서 cname변수에 반환
+        cname.textContent=car.name; //cname 변수의 내용을 출력함
+
+        var colname=document.getElementById("carcolor");//아이디가 carcolor인 요소를 찾아서 cname변수에 반환
+        colname.textContent=car.color; //colname 변수의 내용을 출력함
+
+        var cspeed=document.getElementById("carspeed"); //아이디가 carspeed인 요소를 찾아서 cname변수에 반환
+        cspeed.textContent=car.start(); //carspeed 변수의 내용을 출력함
+
+    </script>
+</body>
+</html>

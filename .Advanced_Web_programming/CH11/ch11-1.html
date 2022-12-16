@@ -12,7 +12,13 @@
     <p id="var3"></p>
 
     <script>
-        var car={ name: 'Sonata', speed: 100, color: 'white' };
+        //car은 객체 변수, name은 속성명, 'Sonata'는 속성값
+        var car={
+            name: 'Sonata',
+            speed: 100,
+            color: 'white'
+        };
+
         document.getElementById("var1").innerHTML="자동차 이름: " + car['name'];
         document.getElementById("var2").innerHTML="자동차 속도: " + car.speed;
         document.getElementById("var3").innerHTML="자동차 색상: " + car.color;

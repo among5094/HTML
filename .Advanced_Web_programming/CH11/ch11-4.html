@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- 자동차 속도 조절하기 과제1 -->
+<html>
+<head>
+    <title>ch11-4번: 자동차 속도 조절하기</title>
+</head>
+<body>
+    <p id="1"></p>
+    <p id="2"></p>
+
+    <script>
+        //객체 변수 car 선언
+        var car={ 
+            //속성 정의
+            name: 'Sonata',
+            speed: 50,
+            color: 'White',
+            //메소드 정의
+            speedup: function()
+            {
+                return this.speed+10;
+            },
+            speeddown: function()
+            {
+                var low=this.speed-10;
+                return low;
+            }
+        };
+
+        var upspeed=document.getElementById("1");//웹문서 내에 upspeed를 가진 아이디를 찾아서 변수upspeed에 넣기
+        upspeed.textContent='속도 증가: ' + car.speedup();//객체 변수 car 안에 있는 메소드 speedup
+        /*웹 문서 안에 id가 1인 요소를 찾아서
+        upspeed 변수에 반환 후
+        upspeed 변수의 내용을 출력한다.. */
+
+        var downspeed=document.getElementById("2");//웹문서 내에 downspeed를 가진 아이디를 찾아서 변수downspeed에 넣기
+        downspeed.textContent='속도 감소: ' + car.speeddown();//객체 변수 car 안에 있는 메소드 speeddown
+        /*웹 문서 안에 id가 2인 요소를 찾아서
+        downspeed 변수에 반환 후
+        upspeed 변수의 내용을 출력한다.. */
+        
+    </script>
+</body>
+</html>
