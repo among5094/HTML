@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- 자동차 속도 조절하기 과제1 -->
+<html>
+<head>
+    <title>ch11-5번: 자동차 속도 제어하기</title>
+</head>
+<body>
+
+    <p id="1"></p>
+    <p id="2"></p>
+
+    <script>
+
+        //---객체 변수 car 선언---
+        var car={ 
+            //속성 정의
+            name: 'Sonata',
+            speed: 100,
+            color: 'White',
+
+            //---메소드 정의---
+            //속도를 무한대로 높일 수 없는 상황 가정
+            speedup: function(a)
+            {
+                var sp=this.speed+a;
+                //속도 제어
+                if(sp>=300) //속도가 300넘으면
+                {
+                    sp=50; //속도 좀 줄여주기
+                    return sp;
+                }
+                else //속도가 300미만이면
+                    return sp; //그냥 그대로 반환
+            },
+            //속도가 -값이 될 수 없는 상황 가정
+            speeddown: function(a)
+            {
+                var sp=this.speed-a;
+                if(sp<0) //-값은 될 수 없으니까
+                {
+                    sp=0; //0으로 맞추기
+                    return sp;
+                }
+                else //0이상이면 그냥 sp반환
+                    return sp;
+
+            }
+        };
+
+        //---출력부분---
+        var upspeed=document.getElementById("1");//웹문서 내에 upspeed를 가진 아이디를 찾아서 변수upspeed에 넣기
+        upspeed.textContent='속도 증가: ' + car.speedup(100);//객체 변수 car 안에 있는 메소드 speedup
+        /*웹 문서 안에 id가 1인 요소를 찾아서
+        upspeed 변수에 반환 후
+        upspeed 변수의 내용을 출력한다.. */
+
+        var downspeed=document.getElementById("2");//웹문서 내에 downspeed를 가진 아이디를 찾아서 변수downspeed에 넣기
+        downspeed.textContent='속도 감소: ' + car.speeddown(30);//객체 변수 car 안에 있는 메소드 speeddown
+        /*웹 문서 안에 id가 2인 요소를 찾아서
+        downspeed 변수에 반환 후
+        upspeed 변수의 내용을 출력한다.. */
+        
+    </script>
+</body>
+</html>
