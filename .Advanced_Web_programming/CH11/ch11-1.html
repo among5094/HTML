@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ch11-1번: 속성을 가진 객체 만들기</title>
+    <!--객체의 속성에 접근할 때는 .(멤버 접근 연산자)또는[]사용함
+    객체 이름.속성or메소드 -->
+</head>
+<body>
+
+    <p id="var1"></p>
+    <p id="var2"></p>
+    <p id="var3"></p>
+
+    <script>
+        var car={ name: 'Sonata', speed: 100, color: 'white' };
+        document.getElementById("var1").innerHTML="자동차 이름: " + car['name'];
+        document.getElementById("var2").innerHTML="자동차 속도: " + car.speed;
+        document.getElementById("var3").innerHTML="자동차 색상: " + car.color;
+        //getElementsById("var1"); : 웹 문서 안에서 아이디가 "var1"인 요소를 찾아 내용을 출력
+
+    </script>
+</body>
+</html>
