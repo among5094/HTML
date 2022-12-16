@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ch11-11번: Date()객체 활용하기 (p.420)</title>
+    <!--Date객체는 내장 객체, 날짜와 시간 정보 출력.-->
+</head>
+<body>
+    <p id="date_1"></p>
+    <p id="date_2"></p>
+    <p id="date_3"></p>
+    <p id="date_4"></p>
+
+    <script>
+        //기본 생성자 -> 아무런 매개 변수가 없는 모형이 기본 생성자이다.
+        document.getElementById("date_1").innerHTML = new Date();
+        //1970.01.01 이후의 밀리초 계산 ??
+        document.getElementById("date_2").innerHTML = new Date(11);
+        //문자열 날짜 ※주의사항: 월(month)은 0부터 시작
+        document.getElementById("date_3").innerHTML = new Date("October 15, 2022 04:18:07");
+        //날짜 지정
+        document.getElementById("date_4").innerHTML = new Date(2018, 11, 25, 18, 30, 29);
+
+    </script>
+
+
+</body>
+</html>
